@@ -1,4 +1,6 @@
-public class lab4 {
+package Lab4;
+
+public class Main {
     public static void main(String[] args) {
         int[] first_array = {-1, -2, -3, -4, -5};
         int[] second_array = {10, 2, 3, 4, 5, 6, 1, 1, 3, 4, 5, 7, 7, 1, 1, 7};

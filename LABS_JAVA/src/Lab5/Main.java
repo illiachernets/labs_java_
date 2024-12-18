@@ -1,4 +1,6 @@
-public class lab5 {
+package Lab5;
+
+public class Main {
     public static void main(String[] args) {
         short[] array1 = {40, 59, 12, 29, 30};
 

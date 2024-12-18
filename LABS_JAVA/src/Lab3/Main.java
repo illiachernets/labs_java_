@@ -1,4 +1,6 @@
-public class lab3 {
+package Lab3;
+
+public class Main {
     public static double first(double s, double t, int k) {
         if (k < 2 || k > 25) throw new IllegalArgumentException("Incorrect value for argument k!");
         double sum = 0.0;

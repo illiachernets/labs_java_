@@ -1,4 +1,6 @@
-public class lab2 {
+package Lab2;
+
+public class Main {
     public static double ex11(double a, double b, double c, double d) {
         double arcsinA = Math.asin(a);
         double sqrtAbsB = Math.sqrt(Math.abs(b));
