@@ -115,11 +115,11 @@ public class Main {
 
 
     public static double findMaxSalary(Firm firm) {
-        double maxSalary = firm.getDirector().getSalary(); // Start with the director's salary
+        double maxSalary = firm.getDirector().getSalary(); // беремо за максимуальну зп директора
 
-        // Iterate over all departments in the firm
+        // Ітеруємось по всім відділам
         for (Department department : firm.getDepartments()) {
-            maxSalary = Math.max(maxSalary, department.getManager().getSalary()); // Compare with manager's salary
+            maxSalary = Math.max(maxSalary, department.getManager().getSalary());
 
             // Ітерування по усіх працівниках у відділі використовуючи типізований ітератор
             for (Iterator<Employee> iterator = department.getEmployees().iterator(); iterator.hasNext(); ) {
@@ -132,7 +132,7 @@ public class Main {
     }
 
     public static List<String> findDepartmentsWithHigherPaidEmployees(Firm firm) {
-        List<String> departmentsWithHigherPaidEmployees = new ArrayList<>(); // Initialize the result list
+        List<String> departmentsWithHigherPaidEmployees = new ArrayList<>();
 
         // Ітерація по кожному відділу у фірмі
         for (Department department : firm.getDepartments()) {
@@ -154,18 +154,18 @@ public class Main {
         allEmployees.add(firm.getDirector());
 
         // Ітерація по відділах у фірмі використовуючи нетипізований ітератор
-        Iterator<Department> departmentIterator = firm.getDepartments().iterator();
+        Iterator departmentIterator = firm.getDepartments().iterator();
         while (departmentIterator.hasNext()) {
-            Department department = departmentIterator.next();
+            Department department = (Department) departmentIterator.next();
             allEmployees.add(department.getManager());
 
             // Ітерація по працівниках у відділі використовуючи нетипізований ітератор
-            Iterator<Employee> employeeIterator = department.getEmployees().iterator();
+            Iterator employeeIterator = department.getEmployees().iterator();
             while (employeeIterator.hasNext()) {
-                allEmployees.add(employeeIterator.next());
+                Employee employee = (Employee) employeeIterator.next();
+                allEmployees.add(employee);
             }
         }
-
         return allEmployees;
     }
 }
